@@ -24,6 +24,6 @@ Even adapted versions of Arcade or parts of it can be used in commercial project
 Can I use Arcade resources in my own educational materials?
 -----------------------------------------------------------
 
-Yes! Arcade was primarily developed for educational purposes.
-Use Arcade materials in any way you see fit. Original content
-or adapted versions of it.
+Of course! Arcade was built to support learning.
+You can use its materials however you need—
+whether you stick with the original content or make changes to suit your needs.
