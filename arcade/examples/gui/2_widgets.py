@@ -38,7 +38,7 @@ from arcade.gui import (
 )
 
 # Load system fonts
-arcade.resources.load_system_fonts()
+arcade.resources.load_kenney_fonts()
 
 DEFAULT_FONT = ("Kenney Future", "arial")
 DETAILS_FONT = ("arial", "Kenney Future Narrow")

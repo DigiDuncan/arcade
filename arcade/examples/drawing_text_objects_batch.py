@@ -16,7 +16,7 @@ import arcade
 from pyglet.graphics import Batch
 
 # Load fonts bumbled with Arcade such as the Kenney fonts
-arcade.resources.load_system_fonts()
+arcade.resources.load_kenney_fonts()
 
 WINDOW_WIDTH = 1280  # Window width in pixels
 WINDOW_HEIGHT = 800  # Window height in pixels

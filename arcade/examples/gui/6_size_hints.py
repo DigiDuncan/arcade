@@ -32,7 +32,7 @@ from arcade.gui import (
     UIView,
 )
 
-arcade.resources.load_system_fonts()
+arcade.resources.load_kenney_fonts()
 
 SIZE_HINT_TEXT = textwrap.dedent(
     """

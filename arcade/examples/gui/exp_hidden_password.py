@@ -23,7 +23,7 @@ from arcade.gui.widgets.text import UILabel
 from arcade import resources
 
 # Load kenny fonts shipped with arcade
-resources.load_system_fonts()
+resources.load_kenney_fonts()
 
 
 class MyView(UIView):

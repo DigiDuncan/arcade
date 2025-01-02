@@ -16,7 +16,7 @@ from datetime import datetime
 import arcade
 from arcade.gui import UIAnchorLayout, UIImage, UITextArea
 
-arcade.resources.load_system_fonts()
+arcade.resources.load_kenney_fonts()
 
 DESCRIPTION = """How to place widgets on the screen?
 
