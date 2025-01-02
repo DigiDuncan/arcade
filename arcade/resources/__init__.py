@@ -211,7 +211,7 @@ def list_built_in_assets(
     return filtered_paths
 
 
-def load_system_fonts() -> None:
+def load_kenney_fonts() -> None:
     """Loads all the fonts in arcade's system directory.
 
     Currently, this is only the Kenney fonts::

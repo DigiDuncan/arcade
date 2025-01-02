@@ -28,7 +28,7 @@ REAL_WINDOW_CLASS = arcade.Window
 WINDOW = None
 OFFSCREEN = None
 
-arcade.resources.load_system_fonts()
+arcade.resources.load_kenney_fonts()
 
 
 def make_window_caption(request=None, prefix="Testing", sep=" - ") -> str:

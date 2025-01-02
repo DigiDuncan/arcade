@@ -13,7 +13,7 @@ DEFAULT_LINE_HEIGHT = 45
 DEFAULT_FONT_SIZE = 20
 
 # Load fonts bumbled with Arcade such as the Kenney fonts
-arcade.resources.load_system_fonts()
+arcade.resources.load_kenney_fonts()
 
 
 class GameView(arcade.View):
