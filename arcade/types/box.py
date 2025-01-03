@@ -136,7 +136,7 @@ class Box(NamedTuple):
         return Vec3(self.left, self.top, self.near)
 
     @property
-    def top_left_right(self) -> Vec3:
+    def top_left_far(self) -> Vec3:
         """
         Returns a :py:class:`~pyglet.math.Vec3` representing the
         top-left-far corner of the box.
@@ -181,7 +181,7 @@ class Box(NamedTuple):
         Returns a :py:class:`~arcade.Rect` representing the
         left face of the box.
         """
-        return LBWH(self.left, self.bottom, self.depth, self.height)
+        return LBWH(self.near, self.bottom, self.depth, self.height)
 
     @property
     def right_face(self) -> Rect:
@@ -189,7 +189,7 @@ class Box(NamedTuple):
         Returns a :py:class:`~arcade.Rect` representing the
         right face of the box.
         """
-        return LBWH(self.left, self.bottom, self.depth, self.height)
+        return LBWH(self.near, self.bottom, self.depth, self.height)
 
     @property
     def top_face(self) -> Rect:
@@ -197,7 +197,7 @@ class Box(NamedTuple):
         Returns a :py:class:`~arcade.Rect` representing the
         top face of the box.
         """
-        return LBWH(self.left, self.bottom, self.width, self.depth)
+        return LBWH(self.left, self.near, self.width, self.depth)
 
     @property
     def bottom_face(self) -> Rect:
@@ -205,7 +205,7 @@ class Box(NamedTuple):
         Returns a :py:class:`~arcade.Rect` representing the
         bottom face of the box.
         """
-        return LBWH(self.left, self.bottom, self.width, self.depth)
+        return LBWH(self.left, self.near, self.width, self.depth)
 
     @property
     def near_face_center(self) -> Vec3:
@@ -283,7 +283,7 @@ class Box(NamedTuple):
         right = max(self.right, other.right)
         bottom = min(self.bottom, other.bottom)
         top = max(self.top, other.top)
-        near = max(self.near, other.near)
+        near = min(self.near, other.near)
         far = max(self.far, other.far)
         return LRBTNF(left, right, bottom, top, near, far)
 
@@ -311,7 +311,7 @@ class Box(NamedTuple):
         right = min(self.right, other.right)
         bottom = max(self.bottom, other.bottom)
         top = min(self.top, other.top)
-        near = min(self.near, other.near)
+        near = max(self.near, other.near)
         far = min(self.far, other.far)
         return LRBTNF(left, right, bottom, top, near, far)
 
@@ -357,10 +357,14 @@ class Box(NamedTuple):
 
         The points will be ordered as follows:
 
-        #. :py:meth:`bottom_left`
-        #. :py:meth:`top_left`
-        #. :py:meth:`top_right`
-        #. :py:meth:`bottom_right`
+        #. :py:meth:`bottom_left_near`
+        #. :py:meth:`top_left_near`
+        #. :py:meth:`top_right_near`
+        #. :py:meth:`bottom_right_near`
+        #. :py:meth:`bottom_left_far`
+        #. :py:meth:`top_left_far`
+        #. :py:meth:`top_right_far`
+        #. :py:meth:`bottom_right_far`
 
         """
         left = self.left
