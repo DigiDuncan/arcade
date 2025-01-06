@@ -113,16 +113,16 @@ class SpriteSheet:
         """
         # PIL box is a 4-tuple: left, upper, right, and lower
         return self.image.crop(
-            (rect.left, self.image.height - rect.bottom - rect.height,
-             rect.left + rect.width, self.image.height - rect.bottom)
+            (
+                rect.left,
+                self.image.height - rect.bottom - rect.height,
+                rect.left + rect.width,
+                self.image.height - rect.bottom,
+            )
         )
 
     # slice an image out of the sprite sheet
-    def get_texture(
-        self,
-        rect: Rect,
-        hit_box_algorithm: HitBoxAlgorithm | None = None
-    ) -> Texture:
+    def get_texture(self, rect: Rect, hit_box_algorithm: HitBoxAlgorithm | None = None) -> Texture:
         """
         Slice out texture from the sprite sheet.
 
