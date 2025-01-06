@@ -86,7 +86,7 @@ def test_get_image(sprite_sheet):
     im = sprite_sheet.get_image(
         LBWH(9 * 4,  # 4th column
         16 * 6,  # 6th row
-        8,16))
+        8,16), True)
     assert isinstance(im, Image.Image)
     assert im.size == (8, 16)
     assert im.tobytes() == dollar_sign.tobytes()

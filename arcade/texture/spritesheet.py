@@ -103,26 +103,39 @@ class SpriteSheet:
         self._image = self._image.transpose(Transpose.FLIP_TOP_BOTTOM)
         self._flip_flags = (self._flip_flags[0], not self._flip_flags[1])
 
-    def get_image(self, rect: Rect) -> Image.Image:
+    def get_image(self, rect: Rect, y_up = False) -> Image.Image:
         """
         Slice out an image from the sprite sheet.
 
         Args:
             rect:
                 The rectangle to crop out.
+            y_up:
+                Sets the coordinate space of the image to assert (0, 0)
+                in the bottom left.
         """
         # PIL box is a 4-tuple: left, upper, right, and lower
-        return self.image.crop(
-            (
-                rect.left,
-                self.image.height - rect.bottom - rect.height,
-                rect.left + rect.width,
-                self.image.height - rect.bottom,
+        if y_up:
+            return self.image.crop(
+                (
+                    rect.left,
+                    self.image.height - rect.bottom - rect.height,
+                    rect.right,
+                    self.image.height - rect.bottom,
+                )
             )
-        )
+        else:
+            return self.image.crop(
+                (
+                    rect.left,
+                    rect.bottom,
+                    rect.right,
+                    rect.top,
+                )
+            )
 
     # slice an image out of the sprite sheet
-    def get_texture(self, rect: Rect, hit_box_algorithm: HitBoxAlgorithm | None = None) -> Texture:
+    def get_texture(self, rect: Rect, hit_box_algorithm: HitBoxAlgorithm | None = None, y_up = False) -> Texture:
         """
         Slice out texture from the sprite sheet.
 
@@ -133,7 +146,7 @@ class SpriteSheet:
                 Hit box algorithm to use for the texture.
                 If not provided, the default hit box algorithm will be used.
         """
-        im = self.get_image(rect)
+        im = self.get_image(rect, y_up)
         texture = Texture(im, hit_box_algorithm=hit_box_algorithm)
         texture.file_path = self._path
         texture.crop_values = rect.lbwh
