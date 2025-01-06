@@ -103,7 +103,7 @@ class SpriteSheet:
         self._image = self._image.transpose(Transpose.FLIP_TOP_BOTTOM)
         self._flip_flags = (self._flip_flags[0], not self._flip_flags[1])
 
-    def get_image(self, rect: Rect, y_up = False) -> Image.Image:
+    def get_image(self, rect: Rect, y_up=False) -> Image.Image:
         """
         Slice out an image from the sprite sheet.
 
@@ -135,7 +135,9 @@ class SpriteSheet:
             )
 
     # slice an image out of the sprite sheet
-    def get_texture(self, rect: Rect, hit_box_algorithm: HitBoxAlgorithm | None = None, y_up = False) -> Texture:
+    def get_texture(
+        self, rect: Rect, hit_box_algorithm: HitBoxAlgorithm | None = None, y_up=False
+    ) -> Texture:
         """
         Slice out texture from the sprite sheet.
 
