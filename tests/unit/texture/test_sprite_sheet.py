@@ -77,7 +77,7 @@ def test_get_image(sprite_sheet):
     im = sprite_sheet.get_image(
         LBWH(9 * 4,  # 4th column
         16,  # second row
-        8, 16)
+        8, 16))
     assert isinstance(im, Image.Image)
     assert im.size == (8, 16)
     assert im.tobytes() == dollar_sign.tobytes()
@@ -85,7 +85,7 @@ def test_get_image(sprite_sheet):
     # Crop out the dollar sign using lower left origin
     im = sprite_sheet.get_image(
         LBWH(9 * 4,  # 4th column
-        y=16 * 6,  # 6th row
+        16 * 6,  # 6th row
         8,16))
     assert isinstance(im, Image.Image)
     assert im.size == (8, 16)
