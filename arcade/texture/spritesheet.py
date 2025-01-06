@@ -151,7 +151,7 @@ class SpriteSheet:
         im = self.get_image(rect, y_up)
         texture = Texture(im, hit_box_algorithm=hit_box_algorithm)
         texture.file_path = self._path
-        texture.crop_values = rect.lbwh
+        texture.crop_values = rect.lbwh_int
         return texture
 
     def get_image_grid(

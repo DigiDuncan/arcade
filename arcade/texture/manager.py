@@ -153,7 +153,7 @@ class TextureCacheManager:
                 Hit box algorithm to use. If not specified, the global default will be used.
         """
         real_path = self._get_real_path(path)
-        texture = self._texture_cache.get_texture_by_filepath(real_path, crop=rect.lbwh)
+        texture = self._texture_cache.get_texture_by_filepath(real_path, crop=rect.lbwh_int)
         if texture:
             return texture
 
@@ -168,7 +168,7 @@ class TextureCacheManager:
 
         # Add to image data cache
         self._image_data_cache.put(
-            Texture.create_image_cache_name(real_path, rect.lbwh),
+            Texture.create_image_cache_name(real_path, rect.lbwh_int),
             texture.image_data,
         )
 
