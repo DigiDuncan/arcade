@@ -386,7 +386,8 @@ class Box(NamedTuple):
 
     def __str__(self) -> str:
         return (
-            f"<{self.__class__.__name__} LRBTNT({self.left}, {self.right}, {self.bottom}, {self.top}, {self.near}, {self.far})"
+            f"<{self.__class__.__name__} LRBTNT({self.left}, {self.right}, {self.bottom}, {self.top},"
+            f"{self.near}, {self.far})"
             f" XYZWHD({self.x}, {self.y}, {self.z} {self.width}, {self.height}, {self.depth})>"
         )
 
