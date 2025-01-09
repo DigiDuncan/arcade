@@ -1,5 +1,5 @@
 """
-Box is the 3D counterpart to Rect.
+Box is the 3D counterpart to :py:class:`~arcade.types.rect.Rect`.
 """
 
 from __future__ import annotations
@@ -45,23 +45,26 @@ class BoxKwargs(TypedDict):
 class Box(NamedTuple):
     """A 3D box, with several convenience properties and functions.
 
-    This object is immutable by design. It provides no setters, and is a NamedTuple
-    subclass.
+    .. important:: Boxes are immutable and axis-aligned bounding prisms!
 
-    Boxes cannot rotate by design, since this complicates their implementation
-    a lot.
+    As :py:class:`~typing.NamedTuple` subclasses, they cannot rotate and
+    have no setters. This keeps their design simple and efficient. To
+    rotate a box's points in 3D, use :py:meth:`to_points` with a 3D math
+    library of your choice.
 
-    You probably don't want to create one of these directly, and should instead use
-    a helper method, like :py:func:`.XYZWHD`, :py:func:`.LRBTNF`,
-    or :py:func:`.LBNWHD`.
+    To create a box, the helper class methods are usually the best choice:
 
-    You can also use :py:meth:`.from_kwargs` to create a Box from keyword arguments.
+    * :py:func:`.XYZWHD`
+    * :py:func:`.LRBTNF`
+    * :py:func:`.LBNWHD`
+    * :py:meth:`.from_kwargs`
+
     """
 
     left: float
     right: float
-
     bottom: float
+
     top: float
 
     near: float
