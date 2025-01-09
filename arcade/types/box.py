@@ -410,7 +410,7 @@ class Box(NamedTuple):
         )
 
     def __bool__(self) -> bool:
-        """Returns True if volume is not 0, else False."""
+        """Returns ``True`` if volume is not ``0``, else ``False``."""
         return self.width != 0 and self.height != 0 and self.depth != 0
 
 
