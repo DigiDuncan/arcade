@@ -1,5 +1,5 @@
 """
-Box is a stub named tuples which acts as the 3D partner to arcade.Box
+Box is the 3D counterpart to Rect.
 """
 
 from __future__ import annotations
@@ -52,8 +52,8 @@ class Box(NamedTuple):
     a lot.
 
     You probably don't want to create one of these directly, and should instead use
-    a helper method, like :py:func:`.LBWH`, :py:func:`.LRBT`, :py:func:`.XYWH`, or
-    :py:func:`.Viewport`.
+    a helper method, like :py:func:`.XYZWHD`, :py:func:`.LRBTNF`,
+    or :py:func:`.LBNWHD`.
 
     You can also use :py:meth:`.from_kwargs` to create a Box from keyword arguments.
     """
@@ -384,9 +384,24 @@ class Box(NamedTuple):
             Vec3(right, bottom, far),
         )
 
+    @property
+    def xyzwhd(self) -> tuple[AsFloat, AsFloat, AsFloat, AsFloat, AsFloat, AsFloat]:
+        """Provides a tuple in the form (x, y, z, width, height, depth)."""
+        return (self.x, self.y, self.z, self.width, self.height, self.depth)
+
+    @property
+    def lrbtnf(self) -> tuple[AsFloat, AsFloat, AsFloat, AsFloat, AsFloat, AsFloat]:
+        """Provides a tuple in the form (left, right, bottom, top, near, far)."""
+        return (self.left, self.right, self.bottom, self.top, self.near, self.far)
+
+    @property
+    def lbnwhd(self) -> tuple[AsFloat, AsFloat, AsFloat, AsFloat, AsFloat, AsFloat]:
+        """Provides a tuple in the form (left, bottom, near, width, height, depth)."""
+        return (self.left, self.bottom, self.near, self.width, self.height, self.depth)
+
     def __str__(self) -> str:
         return (
-            f"<{self.__class__.__name__} LRBTNT({self.left}, {self.right},"
+            f"<{self.__class__.__name__} LRBTNF({self.left}, {self.right},"
             f"{self.bottom}, {self.top}, {self.near}, {self.far})"
             f" XYZWHD({self.x}, {self.y}, {self.z} {self.width}, {self.height}, {self.depth})>"
         )
@@ -397,6 +412,8 @@ class Box(NamedTuple):
 
 
 def XYZWHD(x: float, y: float, z: float, width: float, height: float, depth: float) -> Box:
+    """Creates a new :py:class:`.Box` from center x, center y, center z,
+    width, height, and depth parameters."""
     h_width = width / 2
     h_height = height / 2
     h_depth = depth / 2
@@ -415,12 +432,31 @@ def XYZWHD(x: float, y: float, z: float, width: float, height: float, depth: flo
         z,
     )
 
+def LBNWHD(left: float, bottom: float, near: float,
+           width: float, height: float, depth: float) -> Box:
+    """Creates a new :py:class:`.Box` from left, bottom, near,
+    width, height, and depth parameters."""
+    return Box(
+        left,
+        left + width,
+        bottom,
+        bottom + height,
+        near,
+        near + depth,
+        width,
+        height,
+        depth,
+        left + (width / 2),
+        bottom + (height / 2),
+        near + (depth / 2),
+    )
+
 
 def LRBTNF(left: float, right: float, bottom: float, top: float, near: float, far: float) -> Box:
+    """Creates a new :py:class:`.Box` from left, right, bottom, top, near, and far parameters."""
     width = right - left
     height = top - bottom
     depth = far - near
-
     return Box(
         left,
         right,
