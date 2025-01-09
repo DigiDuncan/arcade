@@ -356,7 +356,7 @@ class Box(NamedTuple):
         return self.point_in_box(point)
 
     def to_points(self) -> tuple[Vec3, Vec3, Vec3, Vec3, Vec3, Vec3, Vec3, Vec3]:
-        """Return a new :py:class:`tuple` of this rectangle's corner points.
+        """Return a new :py:class:`tuple` of this box's corners as 3D points.
 
         The points will be ordered as follows:
 
