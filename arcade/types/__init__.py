@@ -79,7 +79,7 @@ from arcade.types.vector_like import EMPTY_POINT_LIST
 from arcade.types.vector_like import AnchorPoint
 
 # Rectangles
-from arcade.types.rect import ViewportParams
+from arcade.types.rect import IntRectParams
 from arcade.types.rect import RectParams
 from arcade.types.rect import RectKwargs
 
@@ -105,6 +105,7 @@ __all__ = [
     "LRBTNF",
     "LBNWHD",
     "Color",
+    "IntRectParams",
     "IPoint",
     "PathOr",
     "PathOrTexture",
@@ -123,7 +124,6 @@ __all__ = [
     "XYWH",
     "XYRR",
     "Viewport",
-    "ViewportParams",
     "RectParams",
     "RectKwargs",
     "HasAddSubMul",

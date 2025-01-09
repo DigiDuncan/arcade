@@ -1,21 +1,40 @@
-.. include:: /links.rst
-
 .. _community-locations:
 
 Community Locations
 ===================
 
-Most of the community interaction happens on the  `Arcade Discord`_ and `Arcade Github`_.
-The discord server is the best place to ask questions and get help.
-We have help channels, various topic channels, and a place to share
-your projects. This is also where most of the development discussion
-happens.
+Community Standards
+-------------------
 
-Less active places (as of Summer 2024):
+.. raw:: html
 
-* `Reddit`_
-* `Twitter`_
+   <blockquote><i>"Be excellent to each other"</i></blockquote>
 
-Note that these communities have people of all ages from all around the
-world. Please be respectful and kind to everyone. Assume good intentions
-and be patient with people who are learning.
+The Arcade community welcomes everyone from beginners to OpenGL experts.
+
+You should strive to uphold the following goals regardless of a
+user's age or skill level:
+
+* Be kind by assuming good intentions
+* Be patient, especially with beginners
+* Be respectful of others
+
+Where to Post
+-------------
+
+Most community activity is in one of two places:
+
+* The `Arcade Discord`_ server is the most active spot
+* The `Arcade Github`_ repository hosts code and issues
+
+If you're unsure, the Discord is the best place to ask questions.
+This includes changes such as new features, or just :ref:`getting help <how-to-get-help>`.
+
+Other Locations
+---------------
+
+Arcade has a presence on the platforms below, but they're not very active as
+of Summer 2024:
+
+* `r/pythonarcadde <Reddit>`_ on Reddit
+* `@ArcadeLibrary <Twitter>`_ on x.com (formerly Twitter)
