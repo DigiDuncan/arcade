@@ -291,7 +291,7 @@ class Box(NamedTuple):
         return LRBTNF(left, right, bottom, top, near, far)
 
     def __or__(self, other: Box) -> Box:
-        """Shorthand for :py:meth:`rect.union(other) <union>`.
+        """Shorthand for :py:meth:`Box.union(other) <union>`.
 
         Args:
             other: Another :py:class:`Box` instance.
