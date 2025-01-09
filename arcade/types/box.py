@@ -340,6 +340,11 @@ class Box(NamedTuple):
         return self.intersection(other)
 
     def point_in_box(self, point: Point3) -> bool:
+        """``True`` if the point is in or touching the box, otherwise ``False``.
+
+        Args:
+             point: A 3D point.
+        """
         x, y, z = point
         return (
             (self.left <= x <= self.right)
