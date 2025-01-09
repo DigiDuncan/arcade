@@ -432,8 +432,10 @@ def XYZWHD(x: float, y: float, z: float, width: float, height: float, depth: flo
         z,
     )
 
-def LBNWHD(left: float, bottom: float, near: float,
-           width: float, height: float, depth: float) -> Box:
+
+def LBNWHD(
+    left: float, bottom: float, near: float, width: float, height: float, depth: float
+) -> Box:
     """Creates a new :py:class:`.Box` from left, bottom, near,
     width, height, and depth parameters."""
     return Box(
