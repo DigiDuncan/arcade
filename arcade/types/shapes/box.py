@@ -9,7 +9,7 @@ from typing import Any, NamedTuple, TypedDict
 from pyglet.math import Vec3
 
 from arcade.types.numbers import AsFloat
-from arcade.types.rect import LBWH, Rect
+from arcade.types.shapes.rect import LBWH, Rect
 from arcade.types.vector_like import Point3
 
 

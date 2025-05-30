@@ -78,22 +78,22 @@ from arcade.types.vector_like import EMPTY_POINT_LIST
 from arcade.types.vector_like import AnchorPoint
 
 # Rectangles
-from arcade.types.rect import IntRectParams
-from arcade.types.rect import RectParams
-from arcade.types.rect import RectKwargs
+from arcade.types.shapes.rect import IntRectParams
+from arcade.types.shapes.rect import RectParams
+from arcade.types.shapes.rect import RectKwargs
 
-from arcade.types.rect import Rect
-from arcade.types.rect import LRBT
-from arcade.types.rect import LBWH
-from arcade.types.rect import XYWH
-from arcade.types.rect import XYRR
-from arcade.types.rect import Viewport
+from arcade.types.shapes.rect import Rect
+from arcade.types.shapes.rect import LRBT
+from arcade.types.shapes.rect import LBWH
+from arcade.types.shapes.rect import XYWH
+from arcade.types.shapes.rect import XYRR
+from arcade.types.shapes.rect import Viewport
 
 # Boxes
-from arcade.types.box import Box
-from arcade.types.box import LBNWHD
-from arcade.types.box import LRBTNF
-from arcade.types.box import XYZWHD
+from arcade.types.shapes.box import Box
+from arcade.types.shapes.box import LBNWHD
+from arcade.types.shapes.box import LRBTNF
+from arcade.types.shapes.box import XYZWHD
 
 
 __all__ = [
