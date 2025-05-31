@@ -756,7 +756,7 @@ class Rect(NamedTuple):
         )
 
     def __ceil__(self) -> Rect:
-        """Floors the left, right, bottom, and top."""
+        """Ceilings (rounds up) the left, right, bottom, and top."""
         return LRBT(
             math.ceil(self.left), math.ceil(self.right), math.ceil(self.bottom), math.ceil(self.top)
         )
