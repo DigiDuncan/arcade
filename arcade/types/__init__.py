@@ -138,6 +138,7 @@ __all__ = [
     "Size2D",
     "TiledObject",
     "Velocity",
+    "Layoutable"
 ]
 
 
@@ -262,3 +263,9 @@ class SupportsDunderGT(Protocol[_T_contra]):
 
 
 SupportsRichComparison = SupportsDunderLT[Any] | SupportsDunderGT[Any]
+
+class Layoutable(Protocol):
+    x: AsFloat
+    y: AsFloat
+    width: AsFloat
+    height: AsFloat
